@@ -58,7 +58,6 @@ C:\Projetos\APICatalogo\APICatalogo\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swag
 C:\Projetos\APICatalogo\APICatalogo\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Projetos\APICatalogo\APICatalogo\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Projetos\APICatalogo\APICatalogo\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
-C:\Projetos\APICatalogo\APICatalogo\obj\Debug\net5.0\APICatalogo.csprojAssemblyReference.cache
 C:\Projetos\APICatalogo\APICatalogo\obj\Debug\net5.0\APICatalogo.GeneratedMSBuildEditorConfig.editorconfig
 C:\Projetos\APICatalogo\APICatalogo\obj\Debug\net5.0\APICatalogo.AssemblyInfoInputs.cache
 C:\Projetos\APICatalogo\APICatalogo\obj\Debug\net5.0\APICatalogo.AssemblyInfo.cs
@@ -74,3 +73,5 @@ C:\Projetos\APICatalogo\APICatalogo\obj\Debug\net5.0\APICatalogo.dll
 C:\Projetos\APICatalogo\APICatalogo\obj\Debug\net5.0\ref\APICatalogo.dll
 C:\Projetos\APICatalogo\APICatalogo\obj\Debug\net5.0\APICatalogo.pdb
 C:\Projetos\APICatalogo\APICatalogo\obj\Debug\net5.0\APICatalogo.genruntimeconfig.cache
+C:\Projetos\APICatalogo\APICatalogo\obj\Debug\net5.0\APICatalogo.csprojAssemblyReference.cache
+C:\Projetos\APICatalogo\APICatalogo\bin\Debug\net5.0\Newtonsoft.Json.dll

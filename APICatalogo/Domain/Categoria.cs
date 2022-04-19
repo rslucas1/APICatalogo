@@ -8,6 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace APICatalogo.Domain
 {
+    [Table("Categorias")]
     public class Categoria
     {
         public Categoria()

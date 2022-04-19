@@ -14,6 +14,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.Text.Json.Serialization;
+using APICatalogo.Domain;
+using APICatalogo.Services;
+using Microsoft.AspNetCore.Http;
+using APICatalogo.Repository;
 
 namespace APICatalogo
 {
@@ -31,9 +37,15 @@ namespace APICatalogo
         {
             string mySqlConnection = Configuration.GetConnectionString("DefaultConnection");
 
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddTransient<IMeuServico, MeuServico>();
+
             services.AddDbContext<AppDbContext>(options =>
-                options.UseMySql(mySqlConnection,ServerVersion.AutoDetect(mySqlConnection)))
-            services.AddControllers();
+                options.UseMySql(mySqlConnection, ServerVersion.AutoDetect(mySqlConnection)));
+            services.AddControllers().AddJsonOptions(x =>
+                 x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
+            //services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "APICatalogo", Version = "v1" });
@@ -59,6 +71,11 @@ namespace APICatalogo
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.Run(async (context) =>
+            {
+                await context.Response.WriteAsync("Middleware final");
             });
         }
     }
