@@ -20,6 +20,8 @@ using APICatalogo.Domain;
 using APICatalogo.Services;
 using Microsoft.AspNetCore.Http;
 using APICatalogo.Repository;
+using AutoMapper;
+using APICatalogo.DTOs.Mappings;
 
 namespace APICatalogo
 {
@@ -35,6 +37,15 @@ namespace APICatalogo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var mappingConfigure = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+
+            IMapper mapper = mappingConfigure.CreateMapper();
+            services.AddSingleton(mapper);
+
+
             string mySqlConnection = Configuration.GetConnectionString("DefaultConnection");
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();

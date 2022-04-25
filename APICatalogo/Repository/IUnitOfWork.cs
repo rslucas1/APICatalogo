@@ -10,6 +10,7 @@ namespace APICatalogo.Repository
         public IProdutoRepository ProdutoRepository { get;  }
 
         public ICategoriaRepository CategoriaRepository { get;  }
+        object ProdutosRepository { get; }
 
         void Commit();
 

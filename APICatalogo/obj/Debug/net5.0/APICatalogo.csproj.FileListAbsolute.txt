@@ -75,3 +75,5 @@ C:\Projetos\APICatalogo\APICatalogo\obj\Debug\net5.0\APICatalogo.pdb
 C:\Projetos\APICatalogo\APICatalogo\obj\Debug\net5.0\APICatalogo.genruntimeconfig.cache
 C:\Projetos\APICatalogo\APICatalogo\obj\Debug\net5.0\APICatalogo.csprojAssemblyReference.cache
 C:\Projetos\APICatalogo\APICatalogo\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Projetos\APICatalogo\APICatalogo\bin\Debug\net5.0\AutoMapper.dll
+C:\Projetos\APICatalogo\APICatalogo\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

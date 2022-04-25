@@ -15,8 +15,7 @@ namespace APICatalogo.Repository
         public AppDbContext _context;
 
     
-
-     
+          
 
         public UnitOfWork(AppDbContext contexto)
         {
@@ -42,9 +41,16 @@ namespace APICatalogo.Repository
         
         }
 
+        public object ProdutosRepository => throw new NotImplementedException();
+
         public void Commit()
         {
-            throw new NotImplementedException();
+            _context.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            _context.Dispose();
         }
     }
 }
