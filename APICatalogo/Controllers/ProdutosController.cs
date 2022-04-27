@@ -1,6 +1,7 @@
 ﻿using APICatalogo.Context;
 using APICatalogo.Domain;
 using APICatalogo.DTOs;
+using APICatalogo.Paginations;
 using APICatalogo.Repository;
 using APICatalogo.Services;
 using AutoMapper;
@@ -37,10 +38,8 @@ namespace APICatalogo.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<ProdutoDTO>> Get()
         {
-
             try
             {
-
                 var produtos = _uof.ProdutoRepository.Get().ToList();
                 var produtosDTO = _mapper.Map<List<ProdutoDTO>>(produtos);
 
@@ -48,13 +47,27 @@ namespace APICatalogo.Controllers
             }
             catch (Exception)
             {
-
                 return StatusCode(StatusCodes.Status500InternalServerError,
                      "Erro ao tentar acessar o banco de dados");
             }
+        }
 
 
+        [HttpGet("paginados")]
+        public ActionResult<IEnumerable<ProdutoDTO>> GetPaginados([FromQuery] ProdutosParameters produtosParameters)
+        {
+            try
+            {
+                var produtos = _uof.ProdutoRepository.GetProdutos(produtosParameters).ToList();
+                var produtosDTO = _mapper.Map<List<ProdutoDTO>>(produtos);
 
+                return produtosDTO;
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                     "Erro ao tentar acessar o banco de dados");
+            }
         }
 
         [HttpGet("menorpreco")]
